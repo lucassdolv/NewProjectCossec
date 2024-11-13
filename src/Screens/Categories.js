@@ -1,9 +1,42 @@
-import React from 'react'
-import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import React, { useEffect, useState } from 'react'
+import { FlatList, Image, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import CardProduct from '../Components/CardProducts';
 
 export default function Categories() {
+
+    const [produtos, setProdutos] = useState([]);
+
+    useEffect(() => {
+      const fetchProdutos = async () => {
+        try {
+          const response = await fetch('http://10.0.2.2:3000/produtos'); // Porta padrão do json-server
+          const data = await response.json();
+          setProdutos(data);
+        } catch (error) {
+          console.error('Erro ao buscar produtos:', error);
+        }
+      };
+  
+      fetchProdutos();
+    }, []);
+  
+    const renderProdutosPorCategoria = (categoria) => {
+      const produtosFiltrados = produtos.filter(produto => produto.categoria === categoria);
+      return (
+        <View>
+          <FlatList
+            data={produtosFiltrados}
+            horizontal
+            keyExtractor={(item) => item.id.toString()}
+            renderItem={({ item }) => <CardProduct produto={item} />}
+          />
+        </View>
+      );
+    };
+  
+
     return (
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
             <View style={styles.containerTop}>
                 <View style={styles.containerUser}>
                     <Image style={styles.profileImage} source={require('../../assets/perfilIcon.png')}/>
@@ -14,17 +47,17 @@ export default function Categories() {
             <Text style={styles.searchText}>Procure por seus produtos</Text>
             <TextInput style={styles.inputCase} placeholder='  Digite o produto desejado:'/>
             <Text style={styles.categoriesText}>Mouse:</Text>
-            {/* Espaço para card */}
+            {renderProdutosPorCategoria('mouse')}
             <TouchableOpacity style={styles.button}>
                 <Text style={styles.buttonText}>Ver mais</Text>
             </TouchableOpacity>
             <Text style={styles.categoriesText}>Teclado:</Text>
-            {/* Espaço para card */}
+            {renderProdutosPorCategoria('teclado')}
             <TouchableOpacity style={styles.button}>
                 <Text style={styles.buttonText}>Ver mais</Text>
             </TouchableOpacity>
             <Text style={styles.categoriesText}>Headset:</Text>
-            {/* Espaço para card */}
+            {renderProdutosPorCategoria('headset')}
             <TouchableOpacity style={styles.button}>
                 <Text style={styles.buttonText}>Ver mais</Text>
             </TouchableOpacity>
@@ -38,7 +71,7 @@ export default function Categories() {
             <TouchableOpacity style={styles.button}>
                 <Text style={styles.buttonText}>Ver mais</Text>
             </TouchableOpacity>
-        </View>
+        </ScrollView>
     )
 }
 
@@ -89,6 +122,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#000',
         paddingVertical: 15,
         borderRadius: 25,
+        marginTop: 10,
         marginBottom:10,
         width: 162,
         height: 55,
