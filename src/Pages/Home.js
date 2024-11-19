@@ -1,8 +1,9 @@
-import React from 'react';
-import { Image, Pressable, SafeAreaView, Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import React from 'react'
+import { useNavigation } from "@react-navigation/native";
+import { Image, Pressable, Text, View, StyleSheet, TouchableOpacity } from 'react-native'
 
 export default function Home() {
-
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <Pressable style={styles.shopLink} >
@@ -18,15 +19,15 @@ export default function Home() {
       </Text>
       <Image source={require('../../assets/Logo01.jpg')} style={styles.logo} />
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button} >
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Cadastro')}>
           <Text style={styles.buttonText} >Cadastrar</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Entrar</Text>
+          <Text style={styles.buttonText} onPress={() => navigation.navigate('Login')}>Entrar</Text>
         </TouchableOpacity>
       </View>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -34,6 +35,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     paddingHorizontal: 20,
     justifyContent: 'center',
+    flex : 1
   },
   shopLink: {
     alignSelf: 'flex-end',
@@ -78,4 +80,4 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 20,
   },
-});
+})

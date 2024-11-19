@@ -1,7 +1,11 @@
 import React from 'react'
 import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { useNavigation } from "@react-navigation/native";
+
 
 export default function Cadastro() {
+    const navigation = useNavigation();
+
     return (
         <View style={styles.container}>
             <View style={styles.containerTitle}>
@@ -32,10 +36,10 @@ export default function Cadastro() {
             </View>
             <View style={styles.containerButton}>
                 <TouchableOpacity style={styles.button} >
-                    <Text style={styles.buttonText} >Cadastrar</Text>
+                    <Text style={styles.buttonText} onPress={() => navigation.navigate('Categories')}>Cadastrar</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttonText}>Entrar</Text>
+                    <Text style={styles.buttonText} onPress={() => navigation.navigate('Login')}>Entrar</Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -45,6 +49,7 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: '#fff',
         paddingHorizontal: 35,
+        flex: 1
     },
     containerTitle: {
         marginLeft: 36,

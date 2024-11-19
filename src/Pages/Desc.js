@@ -1,39 +1,49 @@
-import React from "react";
+import React from "react"
 import {
   Image,
-  Pressable,
+  ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
-} from "react-native";
+} from "react-native"
 
-export default function Desc() {
+export default function Desc({ route, navigation}) {
+  const { produto } = route.params;
+
   return (
-    <View>
-      <View style={styles.container}>
-        <Pressable style={styles.backButton}>
-          <Text style={styles.textBackButton}>{"<"}</Text>
-        </Pressable>
+    <ScrollView style={styles.container}>
+      <View style={styles.containerboxes1}>
+      <TouchableOpacity onPress={() => navigation.goBack()}>
+        <Text>{"< Voltar"}</Text>
+      </TouchableOpacity>
         <Image style={styles.productImage} source={require('../../assets/mouse.png')}/>
       </View>
       <View style={styles.containerInfos}>
-        <Text style={styles.textName}>"Nome do produto"</Text>
-        <Text style={styles.textPrice}>"Preço"</Text>
+      <Text style={styles.textName}>{produto.nome}</Text>
+      <Text style={styles.textPrice}>R$ {produto.preco}</Text>
       </View>
-      <View style={styles.container}>
-        <Text style={styles.textDesc}>"Descrição"</Text>
+      <View style={styles.containerboxes2}>
+      <Text style={styles.textDesc}>Descrição: {produto.desc}</Text>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Comprar</Text>
         </TouchableOpacity>
       </View>
-    </View>
-  );
+    </ScrollView>
+  )
 }
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#fff",
-    paddingHorizontal: 35,
+    flex: 1
+    },
+  containerboxes1: {
+    paddingHorizontal: 30,
+    marginTop: 50
+  },
+  containerboxes2: {
+    paddingHorizontal: 30,
+    alignItems: "center",
   },
   backButton: {
     marginTop: 70
@@ -69,10 +79,10 @@ const styles = StyleSheet.create({
     fontSize: 16
   },
   button: {
+    marginTop:50,
     backgroundColor: "#FF6500",
     paddingVertical: 15,
     borderRadius: 25,
-    marginBottom: 10,
     width: 162,
     height: 55,
     alignItems: "center",
@@ -81,4 +91,4 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 20,
   },
-});
+})

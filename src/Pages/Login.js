@@ -1,7 +1,9 @@
 import React from 'react'
 import { Button, Image, Pressable, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { useNavigation } from "@react-navigation/native";
 
 export default function Login() {
+    const navigation = useNavigation();
     return (
         <View style={styles.container}>
             <View style={styles.containerTitle}>
@@ -21,10 +23,10 @@ export default function Login() {
             </Pressable>
             <View style={styles.containerButton}>
                 <TouchableOpacity style={styles.button} >
-                    <Text style={styles.buttonText} >Entrar</Text>
+                    <Text style={styles.buttonText} onPress={() => navigation.navigate('Categories')}>Entrar</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttonText}>Cadastrar</Text>
+                    <Text style={styles.buttonText} onPress={() => navigation.navigate('Cadastro')}>Cadastrar</Text>
                 </TouchableOpacity>
             </View>
             <Text style={styles.creditsText}>
@@ -37,6 +39,7 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: '#fff',
         paddingHorizontal: 35,
+        flex: 1
     },
     containerTitle: {
         marginLeft: 56,
