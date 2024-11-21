@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ActivityIndicator, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { useFonts } from 'expo-font';
+import { useNavigation } from '@react-navigation/native';
 
 export default function AddProduct() {
   const [productName, setProductName] = useState('');
@@ -62,9 +63,15 @@ export default function AddProduct() {
       setLoading(false);
     }
   };
+  const navigation = useNavigation();
 
   return (
     <ScrollView style={styles.container}>
+      <TouchableOpacity
+        onPress={() => navigation.goBack()}
+      >
+        <Text style={styles.shopText}>{"< Voltar"}</Text>
+      </TouchableOpacity>
       <Text style={styles.title}>Adicionar Produto</Text>
 
       <TextInput
@@ -112,6 +119,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 35,
     paddingTop: 50,
   },
+  shopText: {
+    fontFamily: "RedHatDisplay-Light",
+    fontSize: 15,
+    color: "black",
+  },
   loadingContainer: {
     flex: 1,
     justifyContent: 'center',
@@ -121,6 +133,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: 'RedHatDisplay-Bold',
     textAlign: 'center',
+    marginTop: 30,
     marginBottom: 30,
   },
   input: {

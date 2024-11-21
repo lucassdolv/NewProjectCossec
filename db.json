@@ -19,7 +19,16 @@
       "nome": "Emreson Royales",
       "senha": "65165321",
       "endereco": "praça fusca",
-      "complemento": "7501"
+      "complemento": "7501",
+      "email": "777@777"
+    },
+    {
+      "id": "1732214153767",
+      "nome": "Lucas Santos",
+      "senha": "lucas",
+      "endereco": "avenida lucas lucas",
+      "complemento": "lucas",
+      "email": "lucas@lucas.lucas"
     }
   ],
   "produtos": [
@@ -50,6 +59,20 @@
       "categoria": "mouse",
       "preco": 20,
       "desc": "mousezin bem ruinzin feito ra vc jogar uns jogos magros"
+    },
+    {
+      "id": "1732209937401",
+      "nome": "Hyper X, TECLADO MECANICO HYPERX ALLOY ORIGINS 60, Preto com iluminação RGB, HKBO1S-RB-US/G\n",
+      "categoria": "teclado",
+      "preco": 412,
+      "desc": "Formato compacto 60%, Switches mecânicos HyperX, Corpo completo de alumínio aeronáutico, Keycaps PBT de duplo disparo com funções secundárias impressas nas laterais , Teclas com iluminação RGB com efeitos radiantes, Customização avançada com o software HyperX NGENUITY, Três ângulos de ajuste do teclado e cabo USB-C removível, Puxador de tecla e keycaps adicionais inclusas, Memoria integrada, Modo de Jogo, 100% anti-ghosting e N-key rollover, Compatibilidade multi-plataforma"
+    },
+    {
+      "id": "1732210159267",
+      "nome": "Mouse sem fio Logitech MX Vertical com Design Ergonômico para Redução de Tensão Muscular, Conexão USB Unifying ou Bluetooth com Easy-Switch para até 3 dispositivos e Bateria Recarregável\n",
+      "categoria": "mouse",
+      "preco": 550,
+      "desc": "Posição natural de aperto de mão com redução de 10% de esforço muscular\nÂngulo vertical de 57° para melhor postura de pulso\nSensor de alta precisão de 4000 DPI para um movimento quatro vezes menor da mão"
     }
   ]
 }

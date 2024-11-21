@@ -3,7 +3,7 @@ import { ActivityIndicator, FlatList, Image, ScrollView, StyleSheet, Text, TextI
 import { useNavigation } from '@react-navigation/native'
 import CardProduct from '../Components/CardProducts'
 import { useFonts } from 'expo-font';
-
+import { useRoute } from '@react-navigation/native';
 
 export default function Categories() {
   const [fontsLoaded] = useFonts({
@@ -11,7 +11,6 @@ export default function Categories() {
     'RedHatDisplay-Bold': require('../../assets/fonts/RedHatDisplay-Bold.ttf'),
   });
 
-  // Exibir indicador de carregamento até as fontes serem carregadas
   if (!fontsLoaded) {
     return (
       <View style={styles.loadingContainer}>
@@ -20,82 +19,86 @@ export default function Categories() {
     );
   }
 
-    const navigation = useNavigation();
-    const [produtos, setProdutos] = useState([]);
+  const navigation = useNavigation();
+  const route = useRoute(); // Recupera os parâmetros enviados pela navegação
+  const { userName } = route.params || {}; // Obtém o nome do usuário
 
-    useEffect(() => {
-      const fetchProdutos = async () => {
-        try {
-          const response = await fetch('http://10.0.2.2:3000/produtos'); // Porta padrão do json-server
-          const data = await response.json();
-          setProdutos(data);
-        } catch (error) {
-          console.error('Erro ao buscar produtos:', error)
-        }
+  const [produtos, setProdutos] = useState([]);
+
+  useEffect(() => {
+    const fetchProdutos = async () => {
+      try {
+        const response = await fetch('http://10.0.2.2:3000/produtos'); // Porta padrão do json-server
+        const data = await response.json();
+        setProdutos(data);
+      } catch (error) {
+        console.error('Erro ao buscar produtos:', error);
       }
-  
-      fetchProdutos()
-    }, [])
-  
-    const renderProdutosPorCategoria = (categoria) => {
-      const produtosFiltrados = produtos.filter(produto => produto.categoria === categoria);
-      return (
-        <View>
-          <FlatList
-            data={produtosFiltrados}
-            horizontal
-            keyExtractor={(item) => item.id.toString()}
-            renderItem={({ item }) => <CardProduct produto={item} />}
-          />
-        </View>
-      )
-    } 
+    };
+
+    fetchProdutos();
+  }, []);
+
+  const renderProdutosPorCategoria = (categoria) => {
+    const produtosFiltrados = produtos.filter((produto) => produto.categoria === categoria);
     return (
-        <ScrollView style={styles.container}>
-          <View style={styles.containerTop}>
-            <TouchableOpacity style={styles.containerUser} onPress={() => navigation.navigate('Profile')}>
-              <Image style={styles.profileImage} source={require('../../assets/perfilIcon.png')} />
-              <Text style={styles.username}>Usuario</Text>
-            </TouchableOpacity>
-            <Image style={styles.logoImage} source={require('../../assets/Logo02.webp')} />
-          </View>
-          <Text style={styles.searchText}>Procure por seus produtos</Text>
-          <TextInput style={styles.inputCase} placeholder='  Digite o produto desejado:' />
-          <Text style={styles.categoriesText}>Mouse:</Text>
-          {renderProdutosPorCategoria('mouse')}
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity style={styles.button}>
-              <Text style={styles.buttonText}>Ver mais</Text>
-            </TouchableOpacity>
-          </View>
-          <Text style={styles.categoriesText}>Teclado:</Text>
-          {renderProdutosPorCategoria('teclado')}
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity style={styles.button}>
-              <Text style={styles.buttonText}>Ver mais</Text>
-            </TouchableOpacity>
-          </View>
-          <Text style={styles.categoriesText}>Headset:</Text>
-          {renderProdutosPorCategoria('headset')}
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity style={styles.button}>
-              <Text style={styles.buttonText}>Ver mais</Text>
-            </TouchableOpacity>
-          </View>
-          <Text style={styles.categoriesText}>MousePad:</Text>
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity style={styles.button}>
-              <Text style={styles.buttonText}>Ver mais</Text>
-            </TouchableOpacity>
-          </View>
-          <Text style={styles.categoriesText}>Monitor:</Text>
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity style={styles.button}>
-              <Text style={styles.buttonText}>Ver mais</Text>
-            </TouchableOpacity>
-          </View>
-        </ScrollView>
-      );      
+      <View>
+        <FlatList
+          data={produtosFiltrados}
+          horizontal
+          keyExtractor={(item) => item.id.toString()}
+          renderItem={({ item }) => <CardProduct produto={item} />}
+        />
+      </View>
+    );
+  };
+
+  return (
+    <ScrollView style={styles.container}>
+      <View style={styles.containerTop}>
+        <TouchableOpacity style={styles.containerUser} onPress={() => navigation.navigate('Profile')}>
+          <Image style={styles.profileImage} source={require('../../assets/perfilIcon.png')} />
+          <Text style={styles.username}>{String(userName || 'Usuário')}</Text>
+        </TouchableOpacity>
+        <Image style={styles.logoImage} source={require('../../assets/Logo02.webp')} />
+      </View>
+      <Text style={styles.searchText}>Procure por seus produtos</Text>
+      <TextInput style={styles.inputCase} placeholder="Digite o produto desejado:" />
+      <Text style={styles.categoriesText}>Mouse:</Text>
+      {renderProdutosPorCategoria('mouse')}
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Ver mais</Text>
+        </TouchableOpacity>
+      </View>
+      <Text style={styles.categoriesText}>Teclado:</Text>
+      {renderProdutosPorCategoria('teclado')}
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Ver mais</Text>
+        </TouchableOpacity>
+      </View>
+      <Text style={styles.categoriesText}>Headset:</Text>
+      {renderProdutosPorCategoria('headset')}
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Ver mais</Text>
+        </TouchableOpacity>
+      </View>
+      <Text style={styles.categoriesText}>MousePad:</Text>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Ver mais</Text>
+        </TouchableOpacity>
+      </View>
+      <Text style={styles.categoriesText}>Monitor:</Text>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Ver mais</Text>
+        </TouchableOpacity>
+      </View>
+    </ScrollView>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -137,6 +140,7 @@ const styles = StyleSheet.create({
         borderWidth: 1.2,
         borderRadius: 20,
         borderColor: "black",
+        padding: 10,
         marginBottom: 15,
         height: 50,
         fontSize: 16,
@@ -146,16 +150,18 @@ const styles = StyleSheet.create({
         fontSize:20,
         fontFamily: 'RedHatDisplay-Light'
     },
+    containerCards: {
+      marginRight: 10
+    },
     buttonContainer: {
         alignItems: 'center', 
-        marginBottom: 20,
+        marginBottom: 10,
     },
     button: {
         backgroundColor: '#000',
         paddingVertical: 15,
         borderRadius: 25,
         marginTop: 10,
-        marginBottom:10,
         width: 162,
         height: 55,
         alignItems: 'center',

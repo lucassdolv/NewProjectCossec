@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
   containerInfos: {
     marginTop: 10,
     width: '100%',
-    height: 134,
+    height: "auto",
     backgroundColor: 'black'
   },
   textName: {
@@ -91,7 +91,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: 'RedHatDisplay-Bold',
     color: 'white',
-    marginTop: 50
+    marginTop: 50,
+    marginBottom: 10
   },
   textDesc: {
     marginTop: 10,

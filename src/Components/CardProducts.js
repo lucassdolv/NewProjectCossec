@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     borderColor: "black",
     padding: 10, 
+    marginRight: 20
   },
   productImage: {
     width: 100,
