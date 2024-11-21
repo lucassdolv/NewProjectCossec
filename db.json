@@ -1,48 +1,55 @@
 {
-    "usuarios": [
-      {
-        "id": "5416",
-        "nome": "Ricardo Dog",
-        "senha": "516951",
-        "endereco": "rua blablabla",
-        "complemento": "2222"
-      },
-      {
-        "id": "6e3d",
-        "nome": "Joo Chicken",
-        "senha": "65163",
-        "endereco": "av fulano de tal",
-        "complemento": "apt 035"
-      },
-      {
-        "id": "da38",
-        "nome": "Emreson Royales",
-        "senha": "65165321",
-        "endereco": "praça fusca",
-        "complemento": "7501"
-      }
-    ],
-    "produtos": [
-      {
-        "id": "1",
-        "categoria": "mouse",
-        "nome": "DeathAdder 2024 50kdpi RGB",
-        "preco": 500,
-        "desc": "Novo DeathAdder 2024, com 50k de dpi, luzes rgb, com cabo. Acabamento em plastico"
-      },
-      {
-        "id": "2",
-        "categoria": "teclado",
-        "nome": "machenike k500-b61",
-        "preco": 120,
-        "desc": "Teclado mecanico com swith blue, luzes rgb, e um otimo custo beneficio"
-      },
-      {
-        "id": "3",
-        "categoria": "headset",
-        "nome": "Headset Gamer Fallen Morcego Preto",
-        "preco": 350,
-        "desc": "Headset Gamer Fallen Morcego Preto com fio de 3 metros, ergométrico"
-      }
-    ]
-  }
+  "usuarios": [
+    {
+      "id": "5416",
+      "nome": "Ricardo Dog",
+      "senha": "516951",
+      "endereco": "rua blablabla",
+      "complemento": "2222"
+    },
+    {
+      "id": "6e3d",
+      "nome": "Joo Chicken",
+      "senha": "65163",
+      "endereco": "av fulano de tal",
+      "complemento": "apt 035"
+    },
+    {
+      "id": "da38",
+      "nome": "Emreson Royales",
+      "senha": "65165321",
+      "endereco": "praça fusca",
+      "complemento": "7501"
+    }
+  ],
+  "produtos": [
+    {
+      "id": "1",
+      "categoria": "mouse",
+      "nome": "DeathAdder 2024 50kdpi RGB",
+      "preco": 500,
+      "desc": "Novo DeathAdder 2024, com 50k de dpi, luzes rgb, com cabo. Acabamento em plastico"
+    },
+    {
+      "id": "2",
+      "categoria": "teclado",
+      "nome": "machenike k500-b61",
+      "preco": 120,
+      "desc": "Teclado mecanico com swith blue, luzes rgb, e um otimo custo beneficio"
+    },
+    {
+      "id": "3",
+      "categoria": "headset",
+      "nome": "Headset Gamer Fallen Morcego Preto",
+      "preco": 350,
+      "desc": "Headset Gamer Fallen Morcego Preto com fio de 3 metros, ergométrico"
+    },
+    {
+      "id": "1732162873453",
+      "nome": "Mousezinho mixuruca",
+      "categoria": "mouse",
+      "preco": 20,
+      "desc": "mousezin bem ruinzin feito ra vc jogar uns jogos magros"
+    }
+  ]
+}

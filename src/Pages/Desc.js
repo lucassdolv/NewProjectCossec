@@ -1,5 +1,7 @@
+import { useFonts } from "expo-font";
 import React from "react"
 import {
+  ActivityIndicator,
   Image,
   ScrollView,
   StyleSheet,
@@ -9,13 +11,27 @@ import {
 } from "react-native"
 
 export default function Desc({ route, navigation}) {
+  const [fontsLoaded] = useFonts({
+    'RedHatDisplay-Light': require('../../assets/fonts/RedHatDisplay-Light.ttf'),
+    'RedHatDisplay-Bold': require('../../assets/fonts/RedHatDisplay-Bold.ttf'),
+  });
+
+  // Exibir indicador de carregamento até as fontes serem carregadas
+  if (!fontsLoaded) {
+    return (
+      <View style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color="#000" />
+      </View>
+    );
+  }
+
   const { produto } = route.params;
 
   return (
     <ScrollView style={styles.container}>
       <View style={styles.containerboxes1}>
       <TouchableOpacity onPress={() => navigation.goBack()}>
-        <Text>{"< Voltar"}</Text>
+        <Text style={styles.shopText}>{"< Voltar"}</Text>
       </TouchableOpacity>
         <Image style={styles.productImage} source={require('../../assets/mouse.png')}/>
       </View>
@@ -48,8 +64,10 @@ const styles = StyleSheet.create({
   backButton: {
     marginTop: 70
   },
-  textBackButton: {
-    fontSize:12
+  shopText: {
+    fontFamily: 'RedHatDisplay-Light',
+    fontSize: 15,
+    color: 'black',
   },
   productImage: {
     width: 290.37,
@@ -64,19 +82,21 @@ const styles = StyleSheet.create({
   textName: {
     marginTop: 10,
     paddingHorizontal: 25,
-    fontSize: 20,
-    color: 'white'
+    fontSize: 25,
+    color: 'white',
+    fontFamily: 'RedHatDisplay-Light'
   }, 
   textPrice: {
     paddingHorizontal: 25,
-    fontSize: 18,
-    fontWeight: 'bold',
+    fontSize: 20,
+    fontFamily: 'RedHatDisplay-Bold',
     color: 'white',
-    marginTop: 60
+    marginTop: 50
   },
   textDesc: {
     marginTop: 10,
-    fontSize: 16
+    fontSize: 20,
+    fontFamily: 'RedHatDisplay-Light'
   },
   button: {
     marginTop:50,
@@ -90,5 +110,6 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "#fff",
     fontSize: 20,
+    fontFamily: 'RedHatDisplay-Bold'
   },
 })

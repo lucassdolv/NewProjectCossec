@@ -1,10 +1,25 @@
 import React, { useEffect, useState } from 'react'
-import { FlatList, Image, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { ActivityIndicator, FlatList, Image, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import CardProduct from '../Components/CardProducts'
+import { useFonts } from 'expo-font';
 
 
 export default function Categories() {
+  const [fontsLoaded] = useFonts({
+    'RedHatDisplay-Light': require('../../assets/fonts/RedHatDisplay-Light.ttf'),
+    'RedHatDisplay-Bold': require('../../assets/fonts/RedHatDisplay-Bold.ttf'),
+  });
+
+  // Exibir indicador de carregamento até as fontes serem carregadas
+  if (!fontsLoaded) {
+    return (
+      <View style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color="#000" />
+      </View>
+    );
+  }
+
     const navigation = useNavigation();
     const [produtos, setProdutos] = useState([]);
 
@@ -38,10 +53,10 @@ export default function Categories() {
     return (
         <ScrollView style={styles.container}>
           <View style={styles.containerTop}>
-            <View style={styles.containerUser}>
+            <TouchableOpacity style={styles.containerUser} onPress={() => navigation.navigate('Profile')}>
               <Image style={styles.profileImage} source={require('../../assets/perfilIcon.png')} />
               <Text style={styles.username}>Usuario</Text>
-            </View>
+            </TouchableOpacity>
             <Image style={styles.logoImage} source={require('../../assets/Logo02.webp')} />
           </View>
           <Text style={styles.searchText}>Procure por seus produtos</Text>
@@ -104,7 +119,8 @@ const styles = StyleSheet.create({
         marginRight: 5
     },
     username: {
-        fontSize: 12
+        fontSize: 12,
+        fontFamily: 'RedHatDisplay-Light'
     }, 
     logoImage: {
         width: 70,
@@ -114,18 +130,21 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginBottom: 10,
         fontSize:20,
-        textAlign: "center"
+        textAlign: "center",
+        fontFamily:'RedHatDisplay-Bold'
     },
     inputCase: {
-        borderWidth: 1.5,
+        borderWidth: 1.2,
         borderRadius: 20,
         borderColor: "black",
         marginBottom: 15,
         height: 50,
-        fontSize: 16
+        fontSize: 16,
+        fontFamily: 'RedHatDisplay-Light'
     },
     categoriesText: {
-        fontSize:20
+        fontSize:20,
+        fontFamily: 'RedHatDisplay-Light'
     },
     buttonContainer: {
         alignItems: 'center', 
@@ -144,5 +163,6 @@ const styles = StyleSheet.create({
     buttonText: {
         color: '#fff',
         fontSize: 20,
+        fontFamily: 'RedHatDisplay-Bold'
       },
 })

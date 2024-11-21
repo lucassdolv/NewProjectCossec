@@ -1,8 +1,22 @@
 import React from 'react'
-import { Button, Image, Pressable, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { ActivityIndicator, Button, Image, Pressable, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { useNavigation } from "@react-navigation/native";
+import { useFonts } from 'expo-font';
 
 export default function Login() {
+    const [fontsLoaded] = useFonts({
+        'RedHatDisplay-Light': require('../../assets/fonts/RedHatDisplay-Light.ttf'),
+        'RedHatDisplay-Bold': require('../../assets/fonts/RedHatDisplay-Bold.ttf'),
+      });
+    
+      // Exibir indicador de carregamento até as fontes serem carregadas
+      if (!fontsLoaded) {
+        return (
+          <View style={styles.loadingContainer}>
+            <ActivityIndicator size="large" color="#000" />
+          </View>
+        );
+      }
     const navigation = useNavigation();
     return (
         <View style={styles.container}>
@@ -54,21 +68,24 @@ const styles = StyleSheet.create({
     },
     titleText: {
         fontSize: 20,
+        fontFamily: 'RedHatDisplay-Bold'
     },
     containerForm: {
         marginTop: 95
     },
     askText: {
         fontSize: 16,
-        marginBottom: 5
+        marginBottom: 5,
+        fontFamily: 'RedHatDisplay-Bold'
     },
     inputCase: {
-        borderWidth: 1.5,
+        borderWidth: 1.2,
         borderRadius: 20,
         borderColor: "black",
         marginBottom: 20,
         height: 50,
-        fontSize: 16
+        fontSize: 16,
+        fontFamily: 'RedHatDisplay-Light'
     },
     buttonPassword: {
         alignItems: 'flex-end',
@@ -76,7 +93,8 @@ const styles = StyleSheet.create({
         marginRight: 3
     },
     textForgotPassword: {
-        color: '#2234A8'
+        color: '#2234A8',
+        fontFamily: 'RedHatDisplay-Light'
     },
     containerButton: {
         flexDirection: 'row',
@@ -94,11 +112,13 @@ const styles = StyleSheet.create({
     buttonText: {
         color: '#fff',
         fontSize: 20,
+        fontFamily: 'RedHatDisplay-Bold'
       },
     creditsText: {
         marginTop: 100,
         marginLeft: 85,
-        fontSize: 20
+        fontSize: 20,
+        fontFamily: 'RedHatDisplay-Light'
     }
 })
 

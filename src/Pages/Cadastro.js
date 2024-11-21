@@ -1,9 +1,24 @@
 import React from 'react'
-import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { ActivityIndicator, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { useNavigation } from "@react-navigation/native";
+import { useFonts } from 'expo-font';
 
 
 export default function Cadastro() {
+    const [fontsLoaded] = useFonts({
+        'RedHatDisplay-Light': require('../../assets/fonts/RedHatDisplay-Light.ttf'),
+        'RedHatDisplay-Bold': require('../../assets/fonts/RedHatDisplay-Bold.ttf'),
+      });
+    
+      // Exibir indicador de carregamento até as fontes serem carregadas
+      if (!fontsLoaded) {
+        return (
+          <View style={styles.loadingContainer}>
+            <ActivityIndicator size="large" color="#000" />
+          </View>
+        );
+      }
+
     const navigation = useNavigation();
 
     return (
@@ -63,6 +78,7 @@ const styles = StyleSheet.create({
         height: 70.98
     },
     titleText: {
+        fontFamily: 'RedHatDisplay-Bold',
         fontSize: 20,
     },
     containerForm: {
@@ -70,15 +86,17 @@ const styles = StyleSheet.create({
     },
     askText: {
         fontSize: 16,
-        marginBottom: 5
+        marginBottom: 5,
+        fontFamily: 'RedHatDisplay-Bold'
     },
     inputCase: {
-        borderWidth: 1.5,
+        borderWidth: 1.2,
         borderRadius: 20,
         borderColor: "black",
         marginBottom: 20,
         height: 50,
-        fontSize: 16
+        fontSize: 16,
+        fontFamily: 'RedHatDisplay-Light'
     },
     containerButton: {
         flexDirection: 'row',
@@ -96,5 +114,6 @@ const styles = StyleSheet.create({
     buttonText: {
         color: '#fff',
         fontSize: 20,
+        fontFamily: 'RedHatDisplay-Bold'
       },
 })
