@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  ActivityIndicator,
-  Image,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import {ActivityIndicator,Image,ScrollView,StyleSheet,Text,TouchableOpacity,View,} from "react-native";
 import { useFonts } from "expo-font";
 import { useNavigation, useRoute } from "@react-navigation/native";
 
@@ -28,9 +20,7 @@ export default function Profile() {
 
   const navigation = useNavigation();
   const route = useRoute();
-
-  // Recuperar os parâmetros da rota
-  const { nome = "Usuário", email = "usuario@cossec.com" } = route.params || {};
+  const { userName, email } = route.params || {};
 
   return (
     <ScrollView style={styles.container}>
@@ -46,8 +36,8 @@ export default function Profile() {
           source={require("../../assets/perfilIcon.png")}
         />
         <View>
-          <Text style={styles.username}>{nome}</Text>
-          <Text style={styles.email}>{email}</Text>
+          <Text style={styles.username}>{String(userName || 'Usuário')}</Text>
+          <Text style={styles.email}>{String(email || 'Usuário')}</Text>
         </View>
       </View>
       <View style={styles.containerButtons}>
@@ -66,7 +56,7 @@ export default function Profile() {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.logoutButton}
-          onPress={() => console.log("Sair da conta")}
+          onPress={() => navigation.navigate('Home')}
         >
           <Text style={styles.logoutText}>Sair</Text>
         </TouchableOpacity>
