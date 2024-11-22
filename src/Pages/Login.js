@@ -38,7 +38,7 @@ export default function Login() {
 
             if (data.length > 0) {
                 Alert.alert('Sucesso', 'Login realizado com sucesso!');
-                navigation.navigate('Categories', { userName: data[0].nome, email: data[0].email });
+                navigation.navigate('Categories', { userName: data[0].nome, email: data[0].email, idCriador: data[0].id });
             } else {
                 Alert.alert('Erro', 'Email ou senha incorretos.');
             }

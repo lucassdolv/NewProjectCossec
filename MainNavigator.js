@@ -8,6 +8,7 @@ import Categories from './src/Pages/Categories'
 import Desc from './src/Pages/Desc'
 import Profile from './src/Pages/Profile'
 import AddProd from './src/Pages/AddProd'
+import DeleteProd from './src/Pages/DeleteProd'
 
 const Stack = createNativeStackNavigator()
 
@@ -22,6 +23,7 @@ export default function MainNavigator() {
             <Stack.Screen name="Desc" component={Desc} options={{ headerShown: false }}/>
             <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }}/>
             <Stack.Screen name="AddProd" component={AddProd} options={{ headerShown: false }}/>
+            <Stack.Screen name="DeleteProd" component={DeleteProd} options={{ headerShown: false }}/>
         </Stack.Navigator>
     </NavigationContainer>
   )

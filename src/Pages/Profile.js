@@ -20,7 +20,7 @@ export default function Profile() {
 
   const navigation = useNavigation();
   const route = useRoute();
-  const { userName, email } = route.params || {};
+  const { userName, email, idCriador } = route.params || {};
 
   return (
     <ScrollView style={styles.container}>
@@ -50,9 +50,15 @@ export default function Profile() {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.option}
-          onPress={() => navigation.navigate("AddProd")}
+          onPress={() => navigation.navigate("AddProd", {idCriador})}
         >
           <Text style={styles.optionText}>Adicionar Produtos</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.option}
+          onPress={() => navigation.navigate("DeleteProd")}
+        >
+          <Text style={styles.optionText}>Deletar Produtos</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.logoutButton}

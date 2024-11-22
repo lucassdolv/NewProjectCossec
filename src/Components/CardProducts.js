@@ -21,7 +21,7 @@ export default function CardProduct({ produto }) {
   return (
     <View style={styles.container}>
       <Image style={styles.productImage} source={require('../../assets/mouse.png')} />
-      <Text style={styles.textName} numberOfLines={1}>{produto.nome}</Text>
+      <Text style={styles.textName} numberOfLines={2}>{produto.nome}</Text>
       <View style={styles.spacer} />
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Desc', { produto })}>
         <Text style={styles.buttonText}>Ver produto</Text>

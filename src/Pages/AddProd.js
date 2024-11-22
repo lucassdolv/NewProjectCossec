@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { ActivityIndicator, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { useFonts } from 'expo-font';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 
 export default function AddProduct() {
+  const navigation = useNavigation();
+  const route = useRoute();
+  const { idCriador } = route.params || {};
+  const criadorId = route.params?.idCriador;
   const [productName, setProductName] = useState('');
   const [category, setCategory] = useState('');
   const [price, setPrice] = useState('');
@@ -44,6 +48,7 @@ export default function AddProduct() {
           categoria: category,
           preco: parseFloat(price), // Convertendo o preço para número
           desc: description,
+          idDoCriador: criadorId
         }),
       });
 
@@ -63,7 +68,6 @@ export default function AddProduct() {
       setLoading(false);
     }
   };
-  const navigation = useNavigation();
 
   return (
     <ScrollView style={styles.container}>

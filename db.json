@@ -29,6 +29,14 @@
       "endereco": "avenida lucas lucas",
       "complemento": "lucas",
       "email": "lucas@lucas.lucas"
+    },
+    {
+      "id": "1732302475924",
+      "nome": "felipe",
+      "senha": "felipe",
+      "endereco": "paulino",
+      "complemento": "dos santos",
+      "email": "felipe@felipe.felipe"
     }
   ],
   "produtos": [
@@ -73,6 +81,28 @@
       "categoria": "mouse",
       "preco": 550,
       "desc": "Posição natural de aperto de mão com redução de 10% de esforço muscular\nÂngulo vertical de 57° para melhor postura de pulso\nSensor de alta precisão de 4000 DPI para um movimento quatro vezes menor da mão"
+    },
+    {
+      "id": "1732300080743",
+      "nome": "Mouse pad fei pra carai",
+      "categoria": "mousepad",
+      "preco": 20,
+      "desc": "ele é feio e ruim, tipo muito mesmo"
+    },
+    {
+      "id": "1732300300274",
+      "nome": "sdgffd",
+      "categoria": "mouse",
+      "preco": 200,
+      "desc": "asfsdf"
+    },
+    {
+      "id": "1732300671043",
+      "nome": "alo",
+      "categoria": "mouse",
+      "preco": 20,
+      "desc": "alo",
+      "idDoCriador": "1732214153767"
     }
   ]
 }

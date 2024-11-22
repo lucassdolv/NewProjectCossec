@@ -21,7 +21,7 @@ export default function Categories() {
 
   const navigation = useNavigation();
   const route = useRoute();
-  const { userName, email } = route.params || {};
+  const { userName, email, idCriador } = route.params || {};
 
   const [produtos, setProdutos] = useState([]);
 
@@ -58,7 +58,7 @@ export default function Categories() {
       <View style={styles.containerTop}>
         <TouchableOpacity
           style={styles.containerUser}
-          onPress={() => navigation.navigate('Profile', { userName, email })} // Envia o parâmetro
+          onPress={() => navigation.navigate('Profile', { userName, email, idCriador })} // Envia o parâmetro
         >
           <Image style={styles.profileImage} source={require('../../assets/perfilIcon.png')} />
           <Text style={styles.username}>{String(userName || 'Usuário')}</Text>
