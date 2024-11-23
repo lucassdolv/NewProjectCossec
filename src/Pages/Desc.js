@@ -55,14 +55,11 @@ const styles = StyleSheet.create({
     },
   containerboxes1: {
     paddingHorizontal: 30,
-    marginTop: 50
+    marginTop: 45
   },
   containerboxes2: {
     paddingHorizontal: 30,
     alignItems: "center",
-  },
-  backButton: {
-    marginTop: 70
   },
   shopText: {
     fontFamily: 'RedHatDisplay-Light',

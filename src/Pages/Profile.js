@@ -46,7 +46,7 @@ export default function Profile() {
           style={styles.option}
           onPress={() => console.log("Histórico de compras")}
         >
-          <Text style={styles.optionText}>Histórico de Compras</Text>
+          <Text style={styles.optionText}>Lista de Compras</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.option}
@@ -75,10 +75,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    paddingHorizontal: 35,
+    paddingHorizontal: 30,
   },
   containerBack: {
-    marginTop: 50,
+    marginTop: 20,
   },
   shopText: {
     fontFamily: "RedHatDisplay-Light",

@@ -33,7 +33,7 @@ export default function CardProduct({ produto }) {
 const styles = StyleSheet.create({
   container: {
     width: 150,
-    height: 200,
+    height: 220,
     alignItems: "center",
     borderWidth: 1.2,
     borderRadius: 20,
