@@ -19,7 +19,6 @@ export default function AddProduct() {
     'RedHatDisplay-Bold': require('../../assets/fonts/RedHatDisplay-Bold.ttf'),
   });
 
-  // Exibir indicador de carregamento até as fontes serem carregadas
   if (!fontsLoaded) {
     return (
       <View style={styles.loadingContainer}>
@@ -43,15 +42,14 @@ export default function AddProduct() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          id: Date.now().toString(), // Gerando um ID único com timestamp
+          id: Date.now().toString(),
           nome: productName,
           categoria: category,
-          preco: parseFloat(price), // Convertendo o preço para número
+          preco: parseFloat(price),
           desc: description,
           idDoCriador: criadorId
         }),
       });
-
       if (response.ok) {
         alert('Produto adicionado com sucesso!');
         setProductName('');

@@ -12,10 +12,6 @@ export default function Login() {
         'RedHatDisplay-Light': require('../../assets/fonts/RedHatDisplay-Light.ttf'),
         'RedHatDisplay-Bold': require('../../assets/fonts/RedHatDisplay-Bold.ttf'),
     });
-
-    const navigation = useNavigation();
-
-    // Exibir indicador de carregamento até as fontes serem carregadas
     if (!fontsLoaded) {
         return (
             <View style={styles.loadingContainer}>
@@ -23,7 +19,7 @@ export default function Login() {
             </View>
         );
     }
-
+    const navigation = useNavigation();
     const handleLogin = async () => {
         if (!email || !password) {
             Alert.alert('Erro', 'Por favor, preencha todos os campos.');

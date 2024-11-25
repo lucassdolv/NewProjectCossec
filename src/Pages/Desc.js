@@ -16,7 +16,6 @@ export default function Desc({ route, navigation}) {
     'RedHatDisplay-Bold': require('../../assets/fonts/RedHatDisplay-Bold.ttf'),
   });
 
-  // Exibir indicador de carregamento até as fontes serem carregadas
   if (!fontsLoaded) {
     return (
       <View style={styles.loadingContainer}>

@@ -1,107 +1,37 @@
 {
   "usuarios": [
     {
-      "id": "5416",
-      "nome": "Ricardo Dog",
-      "senha": "516951",
-      "endereco": "rua blablabla",
-      "complemento": "2222"
-    },
-    {
-      "id": "6e3d",
-      "nome": "Joo Chicken",
-      "senha": "65163",
-      "endereco": "av fulano de tal",
-      "complemento": "apt 035"
-    },
-    {
-      "id": "da38",
-      "nome": "Emreson Royales",
-      "senha": "65165321",
-      "endereco": "praça fusca",
-      "complemento": "7501",
-      "email": "777@777"
-    },
-    {
       "id": "1732214153767",
       "nome": "Lucas Santos",
       "senha": "lucas",
       "endereco": "avenida lucas lucas",
       "complemento": "lucas",
       "email": "lucas@lucas.lucas"
-    },
-    {
-      "id": "1732302475924",
-      "nome": "felipe",
-      "senha": "felipe",
-      "endereco": "paulino",
-      "complemento": "dos santos",
-      "email": "felipe@felipe.felipe"
     }
   ],
   "produtos": [
     {
-      "id": "1",
-      "categoria": "mouse",
-      "nome": "DeathAdder 2024 50kdpi RGB",
-      "preco": 500,
-      "desc": "Novo DeathAdder 2024, com 50k de dpi, luzes rgb, com cabo. Acabamento em plastico"
-    },
-    {
-      "id": "2",
-      "categoria": "teclado",
-      "nome": "machenike k500-b61",
-      "preco": 120,
-      "desc": "Teclado mecanico com swith blue, luzes rgb, e um otimo custo beneficio"
-    },
-    {
-      "id": "3",
-      "categoria": "headset",
-      "nome": "Headset Gamer Fallen Morcego Preto",
-      "preco": 350,
-      "desc": "Headset Gamer Fallen Morcego Preto com fio de 3 metros, ergométrico"
-    },
-    {
-      "id": "1732162873453",
-      "nome": "Mousezinho mixuruca",
-      "categoria": "mouse",
-      "preco": 20,
-      "desc": "mousezin bem ruinzin feito ra vc jogar uns jogos magros"
-    },
-    {
-      "id": "1732209937401",
-      "nome": "Hyper X, TECLADO MECANICO HYPERX ALLOY ORIGINS 60, Preto com iluminação RGB, HKBO1S-RB-US/G\n",
-      "categoria": "teclado",
-      "preco": 412,
-      "desc": "Formato compacto 60%, Switches mecânicos HyperX, Corpo completo de alumínio aeronáutico, Keycaps PBT de duplo disparo com funções secundárias impressas nas laterais , Teclas com iluminação RGB com efeitos radiantes, Customização avançada com o software HyperX NGENUITY, Três ângulos de ajuste do teclado e cabo USB-C removível, Puxador de tecla e keycaps adicionais inclusas, Memoria integrada, Modo de Jogo, 100% anti-ghosting e N-key rollover, Compatibilidade multi-plataforma"
-    },
-    {
-      "id": "1732210159267",
-      "nome": "Mouse sem fio Logitech MX Vertical com Design Ergonômico para Redução de Tensão Muscular, Conexão USB Unifying ou Bluetooth com Easy-Switch para até 3 dispositivos e Bateria Recarregável\n",
-      "categoria": "mouse",
-      "preco": 550,
-      "desc": "Posição natural de aperto de mão com redução de 10% de esforço muscular\nÂngulo vertical de 57° para melhor postura de pulso\nSensor de alta precisão de 4000 DPI para um movimento quatro vezes menor da mão"
-    },
-    {
-      "id": "1732300080743",
-      "nome": "Mouse pad fei pra carai",
-      "categoria": "mousepad",
-      "preco": 20,
-      "desc": "ele é feio e ruim, tipo muito mesmo"
-    },
-    {
-      "id": "1732300300274",
-      "nome": "sdgffd",
+      "id": "1732497437882",
+      "nome": "Produto Teste",
       "categoria": "mouse",
       "preco": 200,
-      "desc": "asfsdf"
+      "desc": "Produto criado como teste",
+      "idDoCriador": "1732214153767"
     },
     {
-      "id": "1732300671043",
-      "nome": "alo",
-      "categoria": "mouse",
-      "preco": 20,
-      "desc": "alo",
+      "id": "1732497481402",
+      "nome": "Produto Teste 2",
+      "categoria": "alo",
+      "preco": 500,
+      "desc": "teste",
+      "idDoCriador": "1732214153767"
+    },
+    {
+      "id": "1732497497165",
+      "nome": "Produto Teste 3",
+      "categoria": "alalala",
+      "preco": 5,
+      "desc": "teste",
       "idDoCriador": "1732214153767"
     }
   ]

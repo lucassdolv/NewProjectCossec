@@ -8,8 +8,6 @@ export default function Home() {
     'RedHatDisplay-Light': require('../../assets/fonts/RedHatDisplay-Light.ttf'),
     'RedHatDisplay-Bold': require('../../assets/fonts/RedHatDisplay-Bold.ttf'),
   });
-
-  // Exibir indicador de carregamento até as fontes serem carregadas
   if (!fontsLoaded) {
     return (
       <View style={styles.loadingContainer}>
@@ -22,8 +20,8 @@ export default function Home() {
 
   return (
     <View style={styles.container}>
-      <Pressable style={styles.shopLink} onPress={() => console.log("Ir direto à loja")}>
-        <Text style={styles.shopText}>
+      <Pressable style={styles.shopLink} onPress={() => navigation.navigate('Login')}>
+        <Text style={styles.shopText} >
           ir direto à loja {'>'}
         </Text>
       </Pressable>
@@ -55,12 +53,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    paddingHorizontal: 20,
-    justifyContent: 'center',
+    paddingHorizontal: 30,
   },
   shopLink: {
     alignSelf: 'flex-end',
-    marginBottom: 100,
+    marginBottom: 120,
+    marginTop: 50
   },
   shopText: {
     fontFamily: 'RedHatDisplay-Light',

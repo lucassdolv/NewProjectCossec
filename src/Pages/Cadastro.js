@@ -15,10 +15,6 @@ export default function Cadastro() {
         'RedHatDisplay-Light': require('../../assets/fonts/RedHatDisplay-Light.ttf'),
         'RedHatDisplay-Bold': require('../../assets/fonts/RedHatDisplay-Bold.ttf'),
     });
-
-    const navigation = useNavigation();
-
-    // Exibir indicador de carregamento até as fontes serem carregadas
     if (!fontsLoaded) {
         return (
             <View style={styles.loadingContainer}>
@@ -26,13 +22,12 @@ export default function Cadastro() {
             </View>
         );
     }
-
+    const navigation = useNavigation();
     const handleRegister = async () => {
         if (!name || !email || !password || !address || !complement) {
             alert('Por favor, preencha todos os campos!');
             return;
         }
-
         setLoading(true);
 
         try {
@@ -42,7 +37,7 @@ export default function Cadastro() {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    id: Date.now().toString(), // Gerando ID único
+                    id: Date.now().toString(),
                     nome: name,
                     senha: password,
                     endereco: address,
@@ -50,7 +45,6 @@ export default function Cadastro() {
                     email: email,
                 }),
             });
-
             if (response.ok) {
                 alert('Usuário cadastrado com sucesso!');
                 setName('');
@@ -144,7 +138,7 @@ const styles = StyleSheet.create({
     },
     containerTitle: {
         marginLeft: 36,
-        marginTop: 85,
+        marginTop: 60,
         flexDirection: 'row',
         justifyContent: 'flex-start',
         alignItems: 'center',

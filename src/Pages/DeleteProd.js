@@ -19,7 +19,6 @@ export default function DeleteProd() {
     "RedHatDisplay-Bold": require("../../assets/fonts/RedHatDisplay-Bold.ttf"),
   });
 
-  // Exibir indicador de carregamento até as fontes serem carregadas
   if (!fontsLoaded) {
     return (
       <View style={styles.loadingContainer}>
@@ -47,7 +46,6 @@ export default function DeleteProd() {
     fetchProdutos();
   }, []);
 
-  // Função para remover produto do estado após exclusão
   const removeProduto = (id) => {
     setProdutos((prevProdutos) =>
       prevProdutos.filter((produto) => produto.id !== id)

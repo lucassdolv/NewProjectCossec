@@ -21,14 +21,22 @@ export default function Categories() {
 
   const navigation = useNavigation();
   const route = useRoute();
+  const [searchQuery, setSearchQuery] = useState('');
   const { userName, email, idCriador } = route.params || {};
 
   const [produtos, setProdutos] = useState([]);
 
+  const handleSearch = () => {
+    const filteredProdutos = produtos.filter((produto) =>
+      produto.nome.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    navigation.navigate('AllCategorie', { filteredProdutos });
+  };
+
   useEffect(() => {
     const fetchProdutos = async () => {
       try {
-        const response = await fetch('http://10.0.2.2:3000/produtos'); // Porta padrão do json-server
+        const response = await fetch('http://10.0.2.2:3000/produtos');
         const data = await response.json();
         setProdutos(data);
       } catch (error) {
@@ -49,6 +57,14 @@ export default function Categories() {
           keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => <CardProduct produto={item} />}
         />
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity 
+            style={styles.button} 
+            onPress={() => navigation.navigate('AllProduct', { filteredProdutos: produtosFiltrados })}
+          >
+            <Text style={styles.buttonText}>Ver mais</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     );
   };
@@ -58,48 +74,28 @@ export default function Categories() {
       <View style={styles.containerTop}>
         <TouchableOpacity
           style={styles.containerUser}
-          onPress={() => navigation.navigate('Profile', { userName, email, idCriador })} // Envia o parâmetro
-        >
+          onPress={() => navigation.navigate('Profile', { userName, email, idCriador })} >
           <Image style={styles.profileImage} source={require('../../assets/perfilIcon.png')} />
           <Text style={styles.username}>{String(userName || 'Usuário')}</Text>
         </TouchableOpacity>
         <Image style={styles.logoImage} source={require('../../assets/Logo02.webp')} />
       </View>
       <Text style={styles.searchText}>Procure por seus produtos</Text>
-      <TextInput style={styles.inputCase} placeholder="Digite o produto desejado:" />
+      <TextInput
+        style={styles.inputCase}
+        value={searchQuery}
+        onChangeText={setSearchQuery}
+        placeholder="Digite o produto desejado:"
+        onSubmitEditing ={handleSearch}
+      />
       <Text style={styles.categoriesText}>Mouse:</Text>
       {renderProdutosPorCategoria('mouse')}
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Ver mais</Text>
-        </TouchableOpacity>
-      </View>
       <Text style={styles.categoriesText}>Teclado:</Text>
       {renderProdutosPorCategoria('teclado')}
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Ver mais</Text>
-        </TouchableOpacity>
-      </View>
       <Text style={styles.categoriesText}>Headset:</Text>
       {renderProdutosPorCategoria('headset')}
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Ver mais</Text>
-        </TouchableOpacity>
-      </View>
       <Text style={styles.categoriesText}>MousePad:</Text>
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Ver mais</Text>
-        </TouchableOpacity>
-      </View>
       <Text style={styles.categoriesText}>Monitor:</Text>
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Ver mais</Text>
-        </TouchableOpacity>
-      </View>
     </ScrollView>
   );
 }
