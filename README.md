@@ -41,13 +41,13 @@ npm install
 ```
 - Inicie o servidor local (json-server para simulação da API):
 ```bash
-npm run server
+npm json-server --watch db.json --port 3000
 ```
 Isso iniciará o servidor para simulação de dados.
 
 - Inicie o aplicativo:
 ```bash
-npm start
+npx expo start
 ```
 Acesse o aplicativo em seu emulador ou dispositivo.
 
