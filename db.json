@@ -7,31 +7,176 @@
       "endereco": "avenida lucas lucas",
       "complemento": "lucas",
       "email": "lucas@lucas.lucas"
+    },
+    {
+      "id": "1732562642381",
+      "nome": "gfsdg",
+      "senha": "dfghsfdh",
+      "endereco": "shdhrdghd",
+      "complemento": "thjdjyt",
+      "email": "safsdag"
     }
   ],
   "produtos": [
+    {},
     {
-      "id": "1732497437882",
-      "nome": "Produto Teste",
+      "id": "1732555271698",
+      "nome": "Mouse Gamer Razer DeathAdder Essential, Preto",
       "categoria": "mouse",
-      "preco": 200,
-      "desc": "Produto criado como teste",
+      "preco": 329,
+      "desc": "O Razer DeathAdder é a escolha perfeita para gamers que buscam desempenho e confiabilidade. Com uma reputação consolidada no mundo dos esports, esse mouse oferece durabilidade e conforto inigualáveis, sendo um clássico há mais de uma década.",
       "idDoCriador": "1732214153767"
     },
     {
-      "id": "1732497481402",
-      "nome": "Produto Teste 2",
-      "categoria": "alo",
-      "preco": 500,
-      "desc": "teste",
+      "id": "1732555313982",
+      "nome": "Mouse Sem Fio Gamer Logitech G PRO X Superlight, Lightspeed, 25000 DPI, 5 Botões, Branco",
+      "categoria": "mouse",
+      "preco": 589,
+      "desc": "Nosso mouse PRO mais leve e rápido de todos os tempos. Com tecnologia LIGHTSPEED, foi desenvolvido para ajudá-lo a remover todos os obstáculos, para que você possa se concentrar exclusivamente em vencer. Obtenha controle incrivelmente preciso, rápido e consistente com o Sensor HERO 25K. ",
       "idDoCriador": "1732214153767"
     },
     {
-      "id": "1732497497165",
-      "nome": "Produto Teste 3",
-      "categoria": "alalala",
-      "preco": 5,
-      "desc": "teste",
+      "id": "1732555354633",
+      "nome": "Mouse Gamer Redragon Cobra, Chroma RGB, 10000DPI, 7 Botões, Preto",
+      "categoria": "mouse",
+      "preco": 89,
+      "desc": "Trazendo a já amada iluminação Redragon Chroma Mark II o mouse Gamer Profissional Cobra impressiona com tanta beleza, conforto e precisão. Vá além e customize do seu jeito a iluminação do seu mouse com o software Redragon.",
+      "idDoCriador": "1732214153767"
+    },
+    {
+      "id": "1732555397823",
+      "nome": "Mouse Gamer Razer Viper Mini Signature Edition, 30000DPI, 49g, 8khz",
+      "categoria": "mouse",
+      "preco": 5.999,
+      "desc": "Specs tecnológico fator de formulário: destro conectividade: razer™wireless hyperspeed wired - speedflex cabo carregamento usb tipo c vida de bateria: até 60 horas no hyperspeed wireless a 1000hz até 12 horas no hyperpolling wireless a 8000hz sensor: sensor óptico focus pro 30k sensibilidade máxima (dpi):30000 velocidade máxima (ips):750 aceleração máxima (g):70 botões programáveis: 5 tipo de switch: mouse óptico switches gen-3 switch lifecycle:90 milhões de cliques perfis de memória a bordo: 1 pés de mouse: 100% ptfe mouse pés cabo: cabo de carregamento speedflex usb tipo c inclinar roda: nenhum tamanho aproximado: comprimento: 119mm/4,68 em largura: 62mm/2,44 em altura: 39mm/1,53 em peso aproximado 49g / 1.72 oz (excluindo cabo)",
+      "idDoCriador": "1732214153767"
+    },
+    {
+      "id": "1732555710598",
+      "nome": "Teclado Gamer Razer Blackwidow V4, Chroma RGB, Switch Green, Layout US",
+      "categoria": "teclado",
+      "preco": 1.499,
+      "desc": "O Razer BlackWidow V4 é um teclado mecânico premium com interruptores verdes táteis e rápidos, iluminação Razer Chroma RGB por tecla e brilho lateral impressionante. Conta com 6 teclas macro dedicadas, descanso de pulso magnético acolchoado, teclas doubleshot ABS ultra-resistentes e controles multimídia integrados para máxima personalização e conforto em maratonas de jogos.",
+      "idDoCriador": "1732214153767"
+    },
+    {
+      "id": "1732555750148",
+      "nome": "Machenike K500-B61 Mini Teclado Mecânico Formato 60% com Fio, Teclas Removíveis, Retroiluminação RGB, 61 Teclas para Jogos.",
+      "categoria": "teclado",
+      "preco": 239,
+      "desc": "Este teclado Machenike de alto desempenho permite que você desfrute de horas ilimitadas de jogos. Foi especialmente desenvolvido para que você possa expressar suas habilidades e seu estilo. Melhore a sua experiência de jogo, seja você só um amador ou todo um especialista, e faça que suas jogadas atingam outro nível. ",
+      "idDoCriador": "1732214153767"
+    },
+    {
+      "id": "1732555786299",
+      "nome": "Hyper X, TECLADO MECANICO HYPERX ALLOY ORIGINS 60, Preto com iluminação RGB, HKBO1S-RB-US/G",
+      "categoria": "teclado",
+      "preco": 412,
+      "desc": "Formato compacto 60%, Switches mecânicos HyperX, Corpo completo de alumínio aeronáutico, Keycaps PBT de duplo disparo com funções secundárias impressas nas laterais , Teclas com iluminação RGB com efeitos radiantes",
+      "idDoCriador": "1732214153767"
+    },
+    {
+      "id": "1732555818032",
+      "nome": "Teclado Gamer Redragon Lakshmi, Switch Brown, Layout 60%, ABNT2 , Preto",
+      "categoria": "teclado",
+      "preco": 149,
+      "desc": "Para os gamers que procuram deixar o máximo de espaço possível sobre a mesa, o Redragon Lakshmi vem no layout compacto 60% ABNT2.",
+      "idDoCriador": "1732214153767"
+    },
+    {
+      "id": "1732556574971",
+      "nome": "Headset Gamer Fallen Morcego Preto\n",
+      "categoria": "headset",
+      "preco": 349,
+      "desc": "A inspiração no jogo é o que nos motiva e o reconhecimento vem quando a nossa comunidade de fãs brasileiros participam dando o nome do nosso primeiro Headset!\n\n \n\nO Headset Morcego, vem com alto-falantes de alta qualidade e Surround Virtual 7.1, proporcionando uma experiência única ao jogador. É a imersão ao jogo em um novo patamar.",
+      "idDoCriador": "1732214153767"
+    },
+    {
+      "id": "1732556615932",
+      "nome": "Headset Gamer HyperX Cloud Stinger 2, Drivers 50mm, P3, Preto",
+      "categoria": "headset",
+      "preco": 169,
+      "desc": "Com um novo design e 2 anos de DTS Headphone:X Spatial Audio, o Cloud Stinger 2 mantém os fundamentos do Cloud Stinger e os refina.",
+      "idDoCriador": "1732214153767"
+    },
+    {
+      "id": "1732556717916",
+      "nome": "Headset Gamer Razer BlackShark V2 X, Drivers 50mm, Surround 7.1, 3.5 mm, Verde",
+      "categoria": "headet",
+      "preco": 329,
+      "desc": "Bata de frente com a competição com um headset leve para Esports que destaca sob pressão. Apresentamos o Razer BlackShark V2 X, uma ameaça tripla aprovada por gamers profissionais com um áudio fenomenal, uma nitidez de microfone superior e um isolamento acústico estupendo.",
+      "idDoCriador": "1732214153767"
+    },
+    {
+      "id": "1732556939684",
+      "nome": "Headset Gamer Sem Fio Logitech G435, Lightspeed e Bluetooth, Dolby Atmos, USB, PC, PS4, PS5, Mobile, Drivers 40mm, Preto",
+      "categoria": "headset",
+      "preco": 379,
+      "desc": "É quem você é. Sempre. Por isso desenvolvemos o headset gamer G435 para todos os aspectos da sua vida.\nA combinação do LIGHTSPEED sem fio e do Bluetooth proporciona a você a liberdade de se conectar sem fio ao PC, mobile e outros dispositivos.\n\n \n\nOs drivers de 40 mm oferecem som incrível enquanto os microfones com formação de feixe eliminam o ruído de fundo e do braço do microfone. Também tem a certificação CarbonNeutral e foi desenvolvido com mínimo de 22% de plástico reciclado. O jogo nunca acaba com o G435.",
+      "idDoCriador": "1732214153767"
+    },
+    {
+      "id": "1732559466383",
+      "nome": "Mouse Pad Gamer Speed,Extra Grande, Desk Pad Profissional Premium, Com Borda Costurada 60x30, Dragão Chinês Japonês",
+      "categoria": "mousepad",
+      "preco": 25,
+      "desc": "\nUm acessório indispensável para elevar o nível de suas partidas e tornar sua experiência de jogo mais confortável e precisa.\n",
+      "idDoCriador": "1732214153767"
+    },
+    {
+      "id": "1732559512114",
+      "nome": "Mousepad Gamer Fortrek MPG101, Speed, Médio (320x240mm)",
+      "categoria": "mousepad",
+      "preco": 15,
+      "desc": "Jogue com maior rapidez e precisão de movimentos!1\nTecido de microfibra com elastano proporcionando baixo atrito e maior deslize do mouse.",
+      "idDoCriador": "1732214153767"
+    },
+    {
+      "id": "1732559541198",
+      "nome": "Mousepad Gamer HyperX Pulsefire Mat, Extra Grande (900x420mm), Preto HMPM1-XL",
+      "categoria": "mousepad",
+      "preco": 129,
+      "desc": "O Mouse Pad para jogos HyperX Pulsefire Mat foi desenvolvido para durabilidade e rastreamento de precisão com uma superfície altamente otimizada e costura antidesgaste. Com uma parte inferior de borracha antiderrapante e acolchoamento confortável, você pode aprimorar seus jogos e seu conforto. A superfície plana fornece um deslizamento suave e consistente do mouse e se enrola para facilitar a portabilidade. Pulsefire Mat está disponível em uma variedade de opções de tamanho para acomodar diferentes estilos de jogo e requisitos de espaço.",
+      "idDoCriador": "1732214153767"
+    },
+    {
+      "id": "1732559568614",
+      "nome": "Mousepad Gamer Razer Goliathus Cosmic, Speed, Médio (355x254mm)",
+      "categoria": "mousepad",
+      "preco": 59,
+      "desc": "O primeiro grande atrativo do Razer Goliathus Cosmic é, sem dúvida, sua aparência. O mousepad é lindo, tem um acabamento primoroso, com moldura costurada, superfície muito lisa e perfil speed, indicado para quem precisa de mais velocidade nas jogadas. O Razer Goliathus é excelente em sua proposta de oferecer estabilidade, conforto, precisão de movimentos e agilidade para os gamers.",
+      "idDoCriador": "1732214153767"
+    },
+    {
+      "id": "1732559761848",
+      "nome": "Monitor Gamer AOC Agon 4 Pro, 27 Pol, 4K UHD, IPS, 144Hz, 1ms, HDR600, 133% sRGB, G-Sync, HDMI/DP, AG274UXP",
+      "categoria": "monitor",
+      "preco": 5.499,
+      "desc": "Mostre todo seu potencial e ative o modo supremo com um monitor ideal para consoles da nova geração. O AG274UXP conta com uma incrível resolução 4K UHD, taxa de atualização de 144Hz, tecnologia HDR 600 e alto-falantes DTS integrados.",
+      "idDoCriador": "1732214153767"
+    },
+    {
+      "id": "1732559791348",
+      "nome": "Monitor Gamer SuperFrame Vision, 23.8 Pol, Full HD, 107% SRGB, Fast IPS, 1ms, 180Hz, HDR, FreeSync, HDMI/DP, SFVFB-23180-FHD-PRO",
+      "categoria": "monitor",
+      "preco": 699,
+      "desc": "Com uma tela de 23.8 polegadas, o Monitor Gamer SuperFrame Vision oferece um equilíbrio perfeito entre tamanho e espaço de exibição. Seu design elegante e moderno complementa qualquer configuração de jogo, enquanto a tecnologia IPS garante ângulos de visão amplos e cores precisas, permitindo que você desfrute de uma experiência visual imersiva de qualquer ângulo.",
+      "idDoCriador": "1732214153767"
+    },
+    {
+      "id": "1732559818201",
+      "nome": "Monitor Gamer SuperFrame Vision, 27 Pol, Curvo, Quad HD, VA, HDR600, 1ms, 180Hz, FreeSync, HDMI/DP, SFVFB-27180-QHD\n",
+      "categoria": "monitor",
+      "preco": 999,
+      "desc": "O Monitor Gamer SuperFrame Vision é uma janela para um mundo de imersão e excelência visual, projetado para elevar a experiência dos jogadores mais exigentes. Com um display curvo de 27 polegadas, esta obra-prima tecnológica foi meticulosamente desenvolvida para transportar os jogadores para um universo de cores vibrantes, detalhes precisos e desempenho excepcional.",
+      "idDoCriador": "1732214153767"
+    },
+    {
+      "id": "1732559837332",
+      "nome": "Monitor Gamer Ninja Tenseigan, 27 Pol, Full HD, IPS, 1ms, 240Hz, FreeSync, HDR, HDMI/DP, Black, MGN-007-27B\n",
+      "categoria": "monitor",
+      "preco": 899,
+      "desc": "O Monitor Gamer Ninja Tenseigan é uma obra-prima de tecnologia projetada para entusiastas de jogos que buscam o ápice em desempenho e qualidade visual. Com uma resolução impressionante, oferece imagens detalhadas e cristalinas que elevam a experiência de jogo a novos patamares de realismo.",
       "idDoCriador": "1732214153767"
     }
   ]

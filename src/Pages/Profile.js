@@ -43,7 +43,7 @@ export default function Profile() {
         <Text style={styles.title}>Minha Conta</Text>
         <TouchableOpacity
           style={styles.option}
-          onPress={() => console.log("Histórico de compras")}
+          onPress={() => navigation.navigate("Teste")}
         >
           <Text style={styles.optionText}>Lista de Compras</Text>
         </TouchableOpacity>

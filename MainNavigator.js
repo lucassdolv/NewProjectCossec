@@ -11,6 +11,7 @@ import AddProd from './src/Pages/AddProd'
 import DeleteProd from './src/Pages/DeleteProd'
 import AllCategorie from './src/Pages/AllCategorie'
 import AllProduct from './src/Pages/AllProduct'
+import Teste from './src/Pages/Teste'
 
 const Stack = createNativeStackNavigator()
 
@@ -28,6 +29,7 @@ export default function MainNavigator() {
             <Stack.Screen name="DeleteProd" component={DeleteProd} options={{ headerShown: false }}/>
             <Stack.Screen name="AllCategorie" component={AllCategorie} options={{ headerShown: false }}/>
             <Stack.Screen name="AllProduct" component={AllProduct} options={{ headerShown: false }}/>
+            <Stack.Screen name="Teste" component={Teste} options={{ headerShown: false }}/>
         </Stack.Navigator>
     </NavigationContainer>
   )

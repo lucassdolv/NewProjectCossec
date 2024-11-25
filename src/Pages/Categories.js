@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import { ActivityIndicator, FlatList, Image, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
-import CardProduct from '../Components/CardProducts'
+import React, { useCallback, useState } from 'react';
+import { ActivityIndicator, FlatList, Image, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { useNavigation, useRoute, useFocusEffect } from '@react-navigation/native';
+import CardProduct from '../Components/CardProducts';
 import { useFonts } from 'expo-font';
-import { useRoute } from '@react-navigation/native';
 
 export default function Categories() {
   const [fontsLoaded] = useFonts({
@@ -23,7 +22,6 @@ export default function Categories() {
   const route = useRoute();
   const [searchQuery, setSearchQuery] = useState('');
   const { userName, email, idCriador } = route.params || {};
-
   const [produtos, setProdutos] = useState([]);
 
   const handleSearch = () => {
@@ -33,19 +31,21 @@ export default function Categories() {
     navigation.navigate('AllCategorie', { filteredProdutos });
   };
 
-  useEffect(() => {
-    const fetchProdutos = async () => {
-      try {
-        const response = await fetch('http://10.0.2.2:3000/produtos');
-        const data = await response.json();
-        setProdutos(data);
-      } catch (error) {
-        console.error('Erro ao buscar produtos:', error);
-      }
-    };
+  const fetchProdutos = async () => {
+    try {
+      const response = await fetch('http://10.0.2.2:3000/produtos');
+      const data = await response.json();
+      setProdutos(data);
+    } catch (error) {
+      console.error('Erro ao buscar produtos:', error);
+    }
+  };
 
-    fetchProdutos();
-  }, []);
+  useFocusEffect(
+    useCallback(() => {
+      fetchProdutos();
+    }, [])
+  );
 
   const renderProdutosPorCategoria = (categoria) => {
     const produtosFiltrados = produtos.filter((produto) => produto.categoria === categoria);
@@ -95,10 +95,13 @@ export default function Categories() {
       <Text style={styles.categoriesText}>Headset:</Text>
       {renderProdutosPorCategoria('headset')}
       <Text style={styles.categoriesText}>MousePad:</Text>
+      {renderProdutosPorCategoria('mousepad')}
       <Text style={styles.categoriesText}>Monitor:</Text>
+      {renderProdutosPorCategoria('monitor')}
     </ScrollView>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
